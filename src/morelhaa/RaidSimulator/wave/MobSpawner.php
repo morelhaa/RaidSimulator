@@ -44,14 +44,12 @@ class MobSpawner {
         $world = $position->getWorld();
         if ($world === null) return null;
 
-        // Crear el NBT con los datos del mob
         $nbt = CompoundTag::create()
             ->setString("mobType", $type)
             ->setFloat("CustomHealth", $health)
             ->setFloat("CustomDamage", $damage)
             ->setByte("IsBoss", $isBoss ? 1 : 0);
 
-        // Añadir los datos de ubicación requeridos por PocketMine
         $nbt->setString("id", "RaidMob");
         $nbt->setTag("Pos", new ListTag([
             new DoubleTag($position->x),
@@ -63,7 +61,6 @@ class MobSpawner {
             new FloatTag(0.0)
         ]));
 
-        // Crear la entidad usando el constructor directamente
         try {
             $location = Location::fromObject(
                 $position,
@@ -81,20 +78,13 @@ class MobSpawner {
         }
     }
 
-    /**
-     * Obtiene la posición de spawn para un mob
-     * Si hay múltiples puntos de spawn, los distribuye
-     * Si hay un solo punto, spawna en ese punto exacto
-     */
     private static function getSpawnPosition(Arena $arena, int $mobIndex, int $totalMobs): Position {
         $spawnPoints = $arena->getMobSpawnPoints();
 
-        // Si no hay puntos de spawn definidos, usar el centro
         if (empty($spawnPoints)) {
             return $arena->getCenterPoint();
         }
 
-        // Si solo hay 1 punto de spawn, usar ese punto EXACTO
         if (count($spawnPoints) === 1) {
             $spawnPoint = $spawnPoints[0];
             return new Position(
@@ -105,10 +95,8 @@ class MobSpawner {
             );
         }
 
-        // Si hay múltiples puntos, distribuir los mobs entre ellos
         $spawnPoint = $spawnPoints[$mobIndex % count($spawnPoints)];
 
-        // Añadir pequeña variación aleatoria para evitar que se spawneen uno encima del otro
         $x = $spawnPoint->getX() + mt_rand(-1, 1) * 0.5;
         $y = $spawnPoint->getY();
         $z = $spawnPoint->getZ() + mt_rand(-1, 1) * 0.5;
@@ -116,10 +104,6 @@ class MobSpawner {
         return new Position($x, $y, $z, $spawnPoint->getWorld());
     }
 
-    /**
-     * Método legacy mantenido para compatibilidad
-     * @deprecated Usar getSpawnPosition() en su lugar
-     */
     private static function getRandomSpawnPosition(Arena $arena): Position {
         return self::getSpawnPosition($arena, 0, 1);
     }
@@ -134,7 +118,6 @@ class MobSpawner {
     }
 
     public static function spawnBoss(Arena $arena, string $bossType, float $health, float $damage): ?RaidMob {
-        // Los bosses siempre spawnean en el centro de la arena
         $spawnPos = $arena->getCenterPoint();
         $boss = self::createMob($bossType, $spawnPos, $health, $damage, true);
         if ($boss !== null) {
