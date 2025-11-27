@@ -33,7 +33,6 @@ max-players: 10
 #
 # 3. Para obtener coordenadas:
 #    - Párate en el punto deseado
-#    - Ejecuta /getpos o usa F3 (Java) / coordenadas (Bedrock)
 #    - Copia las coordenadas en formato x:y:z
 #
 # 4. RECOMENDACIONES:
