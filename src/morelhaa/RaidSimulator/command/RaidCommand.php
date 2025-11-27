@@ -64,7 +64,6 @@ class RaidCommand extends Command implements PluginOwned {
                 $this->sendHelp($sender);
                 break;
 
-            // Comandos de administración
             case "create":
                 if (!$sender->hasPermission("raid.admin")) {
                     $sender->sendMessage("§cNo tienes permiso para usar este comando");
@@ -159,7 +158,6 @@ class RaidCommand extends Command implements PluginOwned {
     private function handleStats(Player $player, array $args): void {
         $scoreManager = $this->plugin->getScoreManager();
 
-        // Si especifica un jugador (y tiene permiso)
         if (isset($args[1]) && $player->hasPermission("raid.admin")) {
             $targetName = $args[1];
         } else {
