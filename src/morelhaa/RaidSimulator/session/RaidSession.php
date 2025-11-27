@@ -16,7 +16,7 @@ class RaidSession {
     private array $players = [];
     private int $currentWave = 0;
     private int $startTime;
-    private int $totalTime; // tiempo total permitido en segundos
+    private int $totalTime;
     private int $waveStartTime = 0;
     private bool $active = false;
     private bool $paused = false;
