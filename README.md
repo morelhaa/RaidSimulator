@@ -1,4 +1,4 @@
-RaidSimulator
+# RaidSimulator
 
 RaidSimulator es un plugin para PocketMine-MP 5 que agrega un sistema de raids en arenas.
 Los jugadores pueden unirse a una arena, combatir oleadas de mobs y avanzar hasta completar todas las fases.
