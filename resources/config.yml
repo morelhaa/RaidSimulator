@@ -1,0 +1,216 @@
+# ==========================================
+# RAID SIMULATOR - CONFIGURACIÓN PRINCIPAL
+# ==========================================
+
+# Configuración general del plugin
+general:
+  # Prefijo de mensajes
+  prefix: "§e§l[RAID] §r"
+
+  # Tiempo máximo de un raid en segundos (30 minutos)
+  max_raid_time: 1800
+
+  # Tiempo de descanso entre oleadas en segundos
+  wave_break_time: 10
+
+  # Permitir múltiples raids simultáneos
+  allow_multiple_raids: true
+
+  # Máximo de raids simultáneos
+  max_simultaneous_raids: 4
+
+# Configuración de oleadas
+waves:
+  # Total de oleadas por raid
+  total_waves: 30
+
+  # Tiempo máximo por oleada (segundos)
+  max_wave_duration: 90
+
+  # Oleadas de boss (cada X oleadas)
+  boss_waves: [5, 10, 15, 20, 25, 30]
+
+  # Multiplicador de dificultad por oleada
+  difficulty_scaling:
+    health: 0.15  # +15% de vida por oleada
+    damage: 0.10  # +10% de daño por oleada
+    speed_milestone: 10  # Cada 10 oleadas aumenta velocidad
+
+# Configuración de mobs
+mobs:
+  # Multiplicador global de vida
+  health_multiplier: 1.0
+
+  # Multiplicador global de daño
+  damage_multiplier: 1.0
+
+  # Chance de crítico (%)
+  critical_chance: 15
+
+  # Multiplicador de daño crítico
+  critical_multiplier: 1.5
+
+  # Sistema de strafe
+  strafe:
+    enabled: true
+    change_direction_ticks: 20  # Cambiar dirección cada 1 segundo
+
+  # Sistema de combate
+  combat:
+    jump_chance: 30  # % de chance de saltar
+    jump_cooldown: 20  # ticks entre saltos
+    retreat_health_threshold: 0.3  # Retirarse cuando HP < 30%
+    retreat_duration: 40  # ticks de retroceso (2 segundos)
+
+# Sistema de puntuación
+scoring:
+  # Fórmula: (wave * wave_points) + (kills * kill_points) + (time * time_points) - (deaths * death_penalty)
+  wave_points: 100
+  kill_points: 5
+  time_points: 2
+  death_penalty: 20
+
+  # Sistema ELO
+  elo:
+    base_elo: 1000
+    first_place_reward: 20
+    second_place_reward: 10
+    third_place_reward: 5
+
+# Sistema de respawn
+respawn:
+  # Cooldown de respawn (segundos)
+  cooldown: 5
+
+  # Regenerar vida al respawnear
+  full_health: true
+
+  # Regenerar hambre al respawnear
+  full_hunger: true
+
+  # Mantener inventario al morir
+  keep_inventory: true
+
+  # Mantener XP al morir
+  keep_xp: false
+
+# Protecciones de arena
+arena_protection:
+  # Prevenir romper bloques
+  prevent_break: true
+
+  # Prevenir colocar bloques
+  prevent_place: true
+
+  # Prevenir PvP entre jugadores del mismo raid
+  prevent_friendly_fire: true
+
+  # Prevenir daño por caída
+  prevent_fall_damage: true
+
+  # Prevenir uso de items específicos
+  blocked_items:
+    - "ender_pearl"
+    - "chorus_fruit"
+
+  # Prevenir interacción con bloques
+  blocked_blocks:
+    - "chest"
+    - "furnace"
+    - "crafting_table"
+    - "enchanting_table"
+    - "anvil"
+    - "bed"
+
+# Sistema de recompensas
+rewards:
+  # Recompensas por kill normal
+  normal_mob:
+    enabled: true
+    items:
+      cooked_beef:
+        chance: 30
+        min: 1
+        max: 3
+      arrow:
+        chance: 15
+        min: 5
+        max: 10
+      potion:
+        chance: 5
+        amount: 1
+
+  # Recompensas por kill de boss
+  boss_mob:
+    enabled: true
+    always_drop: true
+    items:
+      golden_apple:
+        min: 1
+        max: 3
+      diamond:
+        min: 2
+        max: 5
+      emerald:
+        min: 1
+        max: 3
+
+# Sistema de anuncios
+announcements:
+  # Anunciar cuando alguien inicia un raid
+  announce_start: true
+
+  # Anunciar cuando completan oleadas importantes
+  announce_milestones: true
+  milestone_waves: [10, 20, 30]
+
+  # Anunciar cuando completan el raid
+  announce_completion: true
+
+  # Anunciar nuevos récords
+  announce_records: true
+
+# Configuración de partículas y efectos
+effects:
+  # Mostrar partículas al spawnear mobs
+  spawn_particles: true
+
+  # Mostrar partículas especiales para bosses
+  boss_particles: true
+
+  # Mostrar efecto de crítico
+  critical_effect: true
+
+  # Reproducir sonidos
+  sounds_enabled: true
+
+# Configuración de GUI/Display
+display:
+  # Mostrar scoreboard durante el raid
+  scoreboard_enabled: true
+
+  # Mostrar actionbar con stats
+  actionbar_enabled: true
+
+  # Mostrar títulos para eventos importantes
+  titles_enabled: true
+
+  # Formato de tiempo (mm:ss)
+  time_format: "mm:ss"
+
+# Debug y logs
+debug:
+  # Modo debug (más mensajes en consola)
+  enabled: false
+
+  # Registrar spawns de mobs
+  log_spawns: false
+
+  # Registrar kills
+  log_kills: false
+
+  # Registrar errores detallados
+  verbose_errors: true
+
+# No modificar - Versión del config
+config_version: 1.0

@@ -1,0 +1,337 @@
+# ==========================================
+# RAID SIMULATOR - CONFIGURACIÓN DE RECOMPENSAS
+# ==========================================
+
+# Sistema de recompensas por kills
+# Cada mob puede dropear items con probabilidad específica
+
+# Recompensas de mobs normales
+normal_mobs:
+  zombie:
+    # Comida
+    cooked_beef:
+      chance: 30  # 30% de probabilidad
+      min: 1
+      max: 3
+    # Recursos básicos
+    iron_ingot:
+      chance: 10
+      min: 1
+      max: 2
+    # Flechas
+    arrow:
+      chance: 15
+      min: 5
+      max: 10
+    # Poción
+    potion:
+      chance: 5
+      amount: 1
+
+  skeleton:
+    # Siempre dropea flechas
+    arrow:
+      chance: 100
+      min: 3
+      max: 8
+    # Huesos
+    bone:
+      chance: 50
+      min: 1
+      max: 3
+    # Arco (raro)
+    bow:
+      chance: 3
+      amount: 1
+    # Experiencia extra
+    experience_bottle:
+      chance: 8
+      amount: 1
+
+  spider:
+    # String
+    string:
+      chance: 80
+      min: 1
+      max: 3
+    # Spider eye
+    spider_eye:
+      chance: 40
+      min: 1
+      max: 2
+    # Fermented spider eye (raro)
+    fermented_spider_eye:
+      chance: 5
+      amount: 1
+
+  brute:
+    # Comida premium
+    golden_apple:
+      chance: 20
+      amount: 1
+    # Recursos
+    iron_ingot:
+      chance: 50
+      min: 2
+      max: 4
+    diamond:
+      chance: 10
+      min: 1
+      max: 2
+    # Emerald
+    emerald:
+      chance: 15
+      min: 1
+      max: 2
+
+# Recompensas de bosses
+boss_mobs:
+  zombie_boss:
+    # Siempre dropea
+    always:
+      golden_apple:
+        min: 2
+        max: 4
+      diamond:
+        min: 3
+        max: 6
+      emerald:
+        min: 2
+        max: 4
+    # Drops con probabilidad
+    rare:
+      enchanted_golden_apple:
+        chance: 15
+        amount: 1
+      netherite_ingot:
+        chance: 5
+        amount: 1
+      totem_of_undying:
+        chance: 3
+        amount: 1
+
+  skeleton_boss:
+    # Siempre dropea
+    always:
+      golden_apple:
+        min: 2
+        max: 4
+      diamond:
+        min: 3
+        max: 6
+      emerald:
+        min: 2
+        max: 4
+      arrow:
+        min: 32
+        max: 64
+    # Drops con probabilidad
+    rare:
+      enchanted_bow:
+        chance: 20
+        amount: 1
+      enchanted_golden_apple:
+        chance: 15
+        amount: 1
+      spectral_arrow:
+        chance: 25
+        min: 16
+        max: 32
+
+# Recompensas por completar oleadas específicas
+wave_completion_rewards:
+  wave_5:
+    items:
+      golden_apple:
+        amount: 1
+      diamond:
+        amount: 2
+
+  wave_10:
+    items:
+      golden_apple:
+        amount: 2
+      diamond:
+        amount: 4
+      emerald:
+        amount: 2
+
+  wave_15:
+    items:
+      enchanted_golden_apple:
+        amount: 1
+      diamond:
+        amount: 6
+      emerald:
+        amount: 4
+
+  wave_20:
+    items:
+      enchanted_golden_apple:
+        amount: 2
+      diamond:
+        amount: 10
+      emerald:
+        amount: 6
+      netherite_ingot:
+        amount: 1
+
+  wave_25:
+    items:
+      enchanted_golden_apple:
+        amount: 3
+      diamond:
+        amount: 15
+      emerald:
+        amount: 10
+      netherite_ingot:
+        amount: 2
+
+  wave_30:
+    items:
+      enchanted_golden_apple:
+        amount: 5
+      diamond:
+        amount: 32
+      emerald:
+        amount: 20
+      netherite_ingot:
+        amount: 4
+      totem_of_undying:
+        amount: 1
+
+# Recompensas por completar el raid completo
+raid_completion:
+  # Recompensas base
+  base:
+    diamond:
+      amount: 64
+    emerald:
+      amount: 32
+    golden_apple:
+      amount: 10
+    enchanted_golden_apple:
+      amount: 3
+    netherite_ingot:
+      amount: 5
+
+  # Recompensas bonus según ranking
+  ranking_bonus:
+    first_place:
+      # Top 1 en ranking
+      bonus_multiplier: 2.0
+      special_items:
+        totem_of_undying:
+          amount: 2
+        netherite_ingot:
+          amount: 5
+
+    second_place:
+      # Top 2-3 en ranking
+      bonus_multiplier: 1.5
+      special_items:
+        totem_of_undying:
+          amount: 1
+        netherite_ingot:
+          amount: 3
+
+    third_place:
+      # Top 4-10 en ranking
+      bonus_multiplier: 1.2
+      special_items:
+        netherite_ingot:
+          amount: 2
+
+# Recompensas por score
+score_rewards:
+  # Score < 1000
+  tier_1:
+    min_score: 0
+    max_score: 999
+    items:
+      iron_ingot:
+        amount: 10
+      gold_ingot:
+        amount: 5
+
+  # Score 1000-2999
+  tier_2:
+    min_score: 1000
+    max_score: 2999
+    items:
+      iron_ingot:
+        amount: 20
+      gold_ingot:
+        amount: 10
+      diamond:
+        amount: 5
+
+  # Score 3000-4999
+  tier_3:
+    min_score: 3000
+    max_score: 4999
+    items:
+      gold_ingot:
+        amount: 15
+      diamond:
+        amount: 10
+      emerald:
+        amount: 5
+
+  # Score 5000-7999
+  tier_4:
+    min_score: 5000
+    max_score: 7999
+    items:
+      diamond:
+        amount: 20
+      emerald:
+        amount: 10
+      golden_apple:
+        amount: 5
+
+  # Score 8000+
+  tier_5:
+    min_score: 8000
+    max_score: 999999
+    items:
+      diamond:
+        amount: 32
+      emerald:
+        amount: 20
+      golden_apple:
+        amount: 10
+      enchanted_golden_apple:
+        amount: 2
+      netherite_ingot:
+        amount: 3
+
+# Comandos a ejecutar como recompensa (opcional)
+# Usar {player} para el nombre del jugador
+command_rewards:
+  enabled: false
+
+  # Ejemplo: dar permisos temporales, dinero, etc.
+  wave_30_completion:
+    - "givemoney {player} 10000"
+    - "tempperms {player} raid.master 86400"
+
+  first_place:
+    - "givemoney {player} 50000"
+    - "broadcast §6{player} §eha completado el raid en primer lugar!"
+
+# Configuración de drops
+drop_settings:
+  # Anunciar items raros
+  announce_rare_drops: true
+  rare_items:
+    - "enchanted_golden_apple"
+    - "netherite_ingot"
+    - "totem_of_undying"
+
+  # Auto-pickup (dar items directamente al inventario)
+  auto_pickup: true
+
+  # Proteger items (no se pueden recoger por otros jugadores)
+  protect_drops: true
+  protection_time: 30  # segundos

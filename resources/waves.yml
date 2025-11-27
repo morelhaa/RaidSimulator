@@ -1,0 +1,555 @@
+
+# RAID SIMULATOR - CONFIGURACIÓN DE OLEADAS
+
+
+# Configuración de oleadas
+# Cada oleada tiene:
+# - id: Número de oleada
+# - mobs: Lista de mobs a spawnear
+#   - type: Tipo de mob (zombie, skeleton, spider, brute, zombie_boss, skeleton_boss)
+#   - amount: Cantidad a spawnear
+#   - health: Vida base
+#   - damage: Daño base
+#   - speed: Velocidad base
+#   - boss: Si es un boss (true/false)
+# - boss: Si la oleada contiene un boss
+# - max_duration: Tiempo máximo en segundos
+# - difficulty: Multiplicador de dificultad
+
+waves:
+  # ========== OLEADAS 1-4: BÁSICAS ==========
+  - id: 1
+    mobs:
+      - type: "zombie"
+        amount: 10
+        health: 20
+        damage: 2
+        speed: 1.0
+    boss: false
+    max_duration: 90
+    difficulty: 1.0
+
+  - id: 2
+    mobs:
+      - type: "zombie"
+        amount: 15
+        health: 20
+        damage: 2
+        speed: 1.0
+    boss: false
+    max_duration: 90
+    difficulty: 1.0
+
+  - id: 3
+    mobs:
+      - type: "zombie"
+        amount: 12
+        health: 20
+        damage: 2
+        speed: 1.0
+      - type: "skeleton"
+        amount: 5
+        health: 15
+        damage: 2.5
+        speed: 1.0
+    boss: false
+    max_duration: 90
+    difficulty: 1.1
+
+  - id: 4
+    mobs:
+      - type: "zombie"
+        amount: 20
+        health: 20
+        damage: 2
+        speed: 1.0
+      - type: "spider"
+        amount: 3
+        health: 18
+        damage: 2.0
+        speed: 1.2
+    boss: false
+    max_duration: 90
+    difficulty: 1.2
+
+  # ========== OLEADA 5: BOSS ==========
+  - id: 5
+    mobs:
+      - type: "zombie"
+        amount: 15
+        health: 25
+        damage: 3
+        speed: 1.0
+      - type: "zombie_boss"
+        amount: 1
+        health: 100
+        damage: 5
+        speed: 0.8
+        boss: true
+    boss: true
+    max_duration: 120
+    difficulty: 1.5
+
+  # ========== OLEADAS 6-9: INTERMEDIAS ==========
+  - id: 6
+    mobs:
+      - type: "zombie"
+        amount: 25
+        health: 22
+        damage: 2.5
+        speed: 1.0
+      - type: "skeleton"
+        amount: 8
+        health: 16
+        damage: 3
+        speed: 1.0
+    boss: false
+    max_duration: 90
+    difficulty: 1.3
+
+  - id: 7
+    mobs:
+      - type: "zombie"
+        amount: 20
+        health: 24
+        damage: 3
+        speed: 1.1
+      - type: "spider"
+        amount: 6
+        health: 20
+        damage: 2.5
+        speed: 1.3
+      - type: "skeleton"
+        amount: 5
+        health: 18
+        damage: 3
+        speed: 1.0
+    boss: false
+    max_duration: 90
+    difficulty: 1.4
+
+  - id: 8
+    mobs:
+      - type: "skeleton"
+        amount: 15
+        health: 18
+        damage: 3.5
+        speed: 1.0
+      - type: "zombie"
+        amount: 15
+        health: 25
+        damage: 3
+        speed: 1.1
+    boss: false
+    max_duration: 90
+    difficulty: 1.5
+
+  - id: 9
+    mobs:
+      - type: "zombie"
+        amount: 30
+        health: 26
+        damage: 3.5
+        speed: 1.2
+      - type: "spider"
+        amount: 8
+        health: 22
+        damage: 3
+        speed: 1.4
+    boss: false
+    max_duration: 90
+    difficulty: 1.6
+
+  # ========== OLEADA 10: BOSS ==========
+  - id: 10
+    mobs:
+      - type: "skeleton"
+        amount: 20
+        health: 20
+        damage: 4
+        speed: 1.0
+      - type: "skeleton_boss"
+        amount: 1
+        health: 150
+        damage: 6
+        speed: 0.9
+        boss: true
+    boss: true
+    max_duration: 120
+    difficulty: 1.8
+
+  # ========== OLEADAS 11-14: AVANZADAS ==========
+  - id: 11
+    mobs:
+      - type: "brute"
+        amount: 5
+        health: 40
+        damage: 5
+        speed: 0.9
+      - type: "zombie"
+        amount: 25
+        health: 28
+        damage: 4
+        speed: 1.2
+    boss: false
+    max_duration: 90
+    difficulty: 1.7
+
+  - id: 12
+    mobs:
+      - type: "skeleton"
+        amount: 20
+        health: 22
+        damage: 4.5
+        speed: 1.1
+      - type: "spider"
+        amount: 10
+        health: 24
+        damage: 3.5
+        speed: 1.5
+    boss: false
+    max_duration: 90
+    difficulty: 1.8
+
+  - id: 13
+    mobs:
+      - type: "zombie"
+        amount: 35
+        health: 30
+        damage: 4.5
+        speed: 1.3
+      - type: "brute"
+        amount: 3
+        health: 45
+        damage: 6
+        speed: 1.0
+    boss: false
+    max_duration: 90
+    difficulty: 1.9
+
+  - id: 14
+    mobs:
+      - type: "skeleton"
+        amount: 25
+        health: 24
+        damage: 5
+        speed: 1.1
+      - type: "spider"
+        amount: 12
+        health: 26
+        damage: 4
+        speed: 1.5
+      - type: "brute"
+        amount: 2
+        health: 50
+        damage: 6
+        speed: 1.0
+    boss: false
+    max_duration: 90
+    difficulty: 2.0
+
+  # ========== OLEADA 15: BOSS DOBLE ==========
+  - id: 15
+    mobs:
+      - type: "zombie"
+        amount: 20
+        health: 30
+        damage: 5
+        speed: 1.2
+      - type: "zombie_boss"
+        amount: 1
+        health: 200
+        damage: 8
+        speed: 0.9
+        boss: true
+      - type: "skeleton_boss"
+        amount: 1
+        health: 200
+        damage: 8
+        speed: 0.9
+        boss: true
+    boss: true
+    max_duration: 150
+    difficulty: 2.2
+
+  # ========== OLEADAS 16-19: DIFÍCILES ==========
+  - id: 16
+    mobs:
+      - type: "brute"
+        amount: 8
+        health: 55
+        damage: 7
+        speed: 1.0
+      - type: "skeleton"
+        amount: 20
+        health: 26
+        damage: 5.5
+        speed: 1.2
+    boss: false
+    max_duration: 90
+    difficulty: 2.1
+
+  - id: 17
+    mobs:
+      - type: "zombie"
+        amount: 40
+        health: 32
+        damage: 5.5
+        speed: 1.4
+      - type: "spider"
+        amount: 15
+        health: 28
+        damage: 4.5
+        speed: 1.6
+    boss: false
+    max_duration: 90
+    difficulty: 2.2
+
+  - id: 18
+    mobs:
+      - type: "skeleton"
+        amount: 30
+        health: 28
+        damage: 6
+        speed: 1.2
+      - type: "brute"
+        amount: 5
+        health: 60
+        damage: 8
+        speed: 1.1
+    boss: false
+    max_duration: 90
+    difficulty: 2.3
+
+  - id: 19
+    mobs:
+      - type: "zombie"
+        amount: 30
+        health: 34
+        damage: 6
+        speed: 1.4
+      - type: "spider"
+        amount: 15
+        health: 30
+        damage: 5
+        speed: 1.7
+      - type: "brute"
+        amount: 5
+        health: 65
+        damage: 8
+        speed: 1.1
+    boss: false
+    max_duration: 90
+    difficulty: 2.4
+
+  # ========== OLEADA 20: BOSS TRIPLE ==========
+  - id: 20
+    mobs:
+      - type: "brute"
+        amount: 10
+        health: 70
+        damage: 9
+        speed: 1.1
+      - type: "zombie_boss"
+        amount: 2
+        health: 250
+        damage: 10
+        speed: 1.0
+        boss: true
+      - type: "skeleton_boss"
+        amount: 1
+        health: 250
+        damage: 10
+        speed: 1.0
+        boss: true
+    boss: true
+    max_duration: 180
+    difficulty: 2.6
+
+  # ========== OLEADAS 21-24: MUY DIFÍCILES ==========
+  - id: 21
+    mobs:
+      - type: "brute"
+        amount: 12
+        health: 75
+        damage: 10
+        speed: 1.2
+      - type: "skeleton"
+        amount: 25
+        health: 30
+        damage: 7
+        speed: 1.3
+    boss: false
+    max_duration: 90
+    difficulty: 2.5
+
+  - id: 22
+    mobs:
+      - type: "zombie"
+        amount: 50
+        health: 36
+        damage: 7
+        speed: 1.5
+      - type: "spider"
+        amount: 20
+        health: 32
+        damage: 6
+        speed: 1.8
+    boss: false
+    max_duration: 90
+    difficulty: 2.6
+
+  - id: 23
+    mobs:
+      - type: "skeleton"
+        amount: 35
+        health: 32
+        damage: 7.5
+        speed: 1.3
+      - type: "brute"
+        amount: 8
+        health: 80
+        damage: 11
+        speed: 1.2
+    boss: false
+    max_duration: 90
+    difficulty: 2.7
+
+  - id: 24
+    mobs:
+      - type: "zombie"
+        amount: 40
+        health: 38
+        damage: 7.5
+        speed: 1.5
+      - type: "spider"
+        amount: 20
+        health: 34
+        damage: 6.5
+        speed: 1.9
+      - type: "brute"
+        amount: 8
+        health: 85
+        damage: 11
+        speed: 1.2
+    boss: false
+    max_duration: 90
+    difficulty: 2.8
+
+  # ========== OLEADA 25: BOSS MASIVO ==========
+  - id: 25
+    mobs:
+      - type: "brute"
+        amount: 15
+        health: 90
+        damage: 12
+        speed: 1.3
+      - type: "zombie_boss"
+        amount: 2
+        health: 300
+        damage: 12
+        speed: 1.1
+        boss: true
+      - type: "skeleton_boss"
+        amount: 2
+        health: 300
+        damage: 12
+        speed: 1.1
+        boss: true
+    boss: true
+    max_duration: 200
+    difficulty: 3.0
+
+  # ========== OLEADAS 26-29: EXTREMAS ==========
+  - id: 26
+    mobs:
+      - type: "brute"
+        amount: 20
+        health: 95
+        damage: 13
+        speed: 1.3
+      - type: "skeleton"
+        amount: 30
+        health: 34
+        damage: 8
+        speed: 1.4
+    boss: false
+    max_duration: 90
+    difficulty: 2.9
+
+  - id: 27
+    mobs:
+      - type: "zombie"
+        amount: 60
+        health: 40
+        damage: 8.5
+        speed: 1.6
+      - type: "spider"
+        amount: 25
+        health: 36
+        damage: 7
+        speed: 2.0
+    boss: false
+    max_duration: 90
+    difficulty: 3.0
+
+  - id: 28
+    mobs:
+      - type: "skeleton"
+        amount: 40
+        health: 36
+        damage: 9
+        speed: 1.4
+      - type: "brute"
+        amount: 12
+        health: 100
+        damage: 14
+        speed: 1.3
+    boss: false
+    max_duration: 90
+    difficulty: 3.1
+
+  - id: 29
+    mobs:
+      - type: "zombie"
+        amount: 50
+        health: 42
+        damage: 9
+        speed: 1.6
+      - type: "spider"
+        amount: 25
+        health: 38
+        damage: 7.5
+        speed: 2.0
+      - type: "brute"
+        amount: 10
+        health: 105
+        damage: 14
+        speed: 1.3
+    boss: false
+    max_duration: 90
+    difficulty: 3.2
+
+  # ========== OLEADA 30: BOSS FINAL ==========
+  - id: 30
+    mobs:
+      - type: "brute"
+        amount: 20
+        health: 110
+        damage: 15
+        speed: 1.4
+      - type: "zombie_boss"
+        amount: 3
+        health: 400
+        damage: 15
+        speed: 1.2
+        boss: true
+      - type: "skeleton_boss"
+        amount: 3
+        health: 400
+        damage: 15
+        speed: 1.2
+        boss: true
+    boss: true
+    max_duration: 240
+    difficulty: 3.5

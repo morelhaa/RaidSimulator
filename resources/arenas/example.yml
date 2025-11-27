@@ -1,0 +1,64 @@
+# RAID SIMULATOR - CONFIGURACIÓN DE ARENA
+# Nombre del mundo donde está la arena
+world: "world"
+
+# Punto de spawn de jugadores (formato: x:y:z)
+# Los jugadores aparecerán aquí al entrar al raid
+spawn: "550:5:550"
+
+# Punto central de la arena (formato: x:y:z)
+# Se usa para calcular límites y como referencia
+center: "550:5:550"
+
+# Puntos de spawn de mobs (formato: x:y:z)
+# Los mobs aparecerán aleatoriamente en estos puntos
+# Puedes agregar tantos como quieras para más variedad
+mob-spawns:
+- "550:5:550"
+- "560:5:550"
+- "550:5:560"
+- "560:5:560"
+
+# Máximo de jugadores permitidos en esta arena
+max-players: 10
+
+# GUÍA DE CONFIGURACIÓN
+#
+# CÓMO CREAR UNA NUEVA ARENA:
+#
+# 1. Crea un archivo nuevo en la carpeta arenas/
+#    Ejemplo: arenas/mi_arena.yml
+#
+# 2. Copia este contenido y modifica los valores
+#
+# 3. Para obtener coordenadas:
+#    - Párate en el punto deseado
+#    - Ejecuta /getpos o usa F3 (Java) / coordenadas (Bedrock)
+#    - Copia las coordenadas en formato x:y:z
+#
+# 4. RECOMENDACIONES:
+#    - El spawn debe estar en el centro o entrada
+#    - El centro debe estar en medio de la arena
+#    - Los mob-spawns deben estar alrededor del centro
+#    - Deja al menos 50 bloques de radio libre
+#    - La arena debe estar en terreno plano
+#    - Construye paredes o límites naturales
+#
+# 5. EJEMPLO DE ARENA CIRCULAR:
+#    Si tu arena es circular con radio 30 bloques:
+#    - Centro: 0:64:0
+#    - Spawn: 0:64:0
+#    - Mob spawns en círculo:
+#      * 20:64:0 (Este)
+#      * -20:64:0 (Oeste)
+#      * 0:64:20 (Norte)
+#      * 0:64:-20 (Sur)
+#      * 14:64:14 (Noreste)
+#      * -14:64:14 (Noroeste)
+#      * Etc...
+#
+# 6. VERIFICAR ARENA:
+#    Usa el comando: /raid list
+#    Para ver si cargó correctamente
+#
+# ==========================================

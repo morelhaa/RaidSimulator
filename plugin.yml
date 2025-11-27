@@ -1,0 +1,13 @@
+name: RaidSimulator
+main: morelhaa\RaidSimulator\RaidSimulator
+version: 1.0.0
+api: 5.0.0
+author: morelhaa
+
+permissions:
+  raid.command:
+    default: true
+    description: "Permite usar comandos básicos del raid"
+  raid.admin:
+    default: op
+    description: "Permite gestionar raids"
