@@ -26,7 +26,6 @@ class EntityListener implements Listener {
     public function onEntityDamage(EntityDamageEvent $event): void {
         $entity = $event->getEntity();
 
-        // Solo procesar RaidMobs
         if (!$entity instanceof RaidMob) {
             return;
         }
@@ -149,9 +148,6 @@ class EntityListener implements Listener {
         }
     }
 
-    /**
-     * Actualizar display de vida del mob
-     */
     private function updateMobHealthDisplay(RaidMob $mob): void {
     }
     public function onEntitySpawn(EntitySpawnEvent $event): void {
@@ -181,9 +177,6 @@ class EntityListener implements Listener {
         }
     }
 
-    /**
-     * Prevenir que entidades externas entren a la arena
-     */
     public function onEntityMove(EntitySpawnEvent $event): void {
         $entity = $event->getEntity();
 
