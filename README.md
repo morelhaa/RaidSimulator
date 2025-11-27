@@ -30,6 +30,7 @@ Características
 Archivos de configuración
 
 - config.yml: ajustes generales.
+  
+- waves.yml: definición de oleadas y mobs.
 
-waves.yml: definición de oleadas y mobs.
-rewards.yml: recompensas por completar el raid.
+- rewards.yml: recompensas por completar el raid.
