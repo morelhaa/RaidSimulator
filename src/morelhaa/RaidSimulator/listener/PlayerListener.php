@@ -34,11 +34,9 @@ class PlayerListener implements Listener {
             return;
         }
 
-        // Remover del raid
         $session->removePlayer($player);
         $session->broadcastMessage("§e" . $player->getName() . " §7se ha desconectado");
 
-        // Si no quedan jugadores, terminar sesión
         if ($session->getPlayerCount() === 0) {
             $raidManager->endSession($session->getId(), "§cTodos los jugadores se desconectaron");
         }
@@ -84,7 +82,6 @@ class PlayerListener implements Listener {
             return;
         }
 
-        // Establecer spawn en la arena
         $event->setRespawnPosition($session->getArena()->getSpawnPoint());
     }
 
